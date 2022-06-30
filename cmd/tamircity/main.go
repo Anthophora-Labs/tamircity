@@ -14,6 +14,7 @@ import (
 )
 
 func main() {
+
 	// Set enviroment variables
 	err := godotenv.Load("../../.env")
 	if err != nil {
@@ -24,7 +25,7 @@ func main() {
 		log.Fatal("Postgres cannot init", err)
 	}
 	log.Println("Postgres connected")
-
+	/**/
 	db.AutoMigrate(&dbModels.TechnicalService{}, &dbModels.Brand{}, &dbModels.Model{}, &dbModels.FixType{}, &dbModels.DeviceType{})
 	/*
 		//Add Seed data
